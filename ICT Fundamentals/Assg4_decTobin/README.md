@@ -1,3 +1,33 @@
+# Assignment 4: Designing Decimal to Binary Number Converter
+Used TypeScript to roughly emulate how the conversion would be done with pen and paper, as in this example:
+
+$$
+\begin{align*}
+\text{Integer Part:} \\
+        & 57 & = 28 & \times 2 + & \boxed{1} \\
+         & 28 & = 14 & \times 2 + & \boxed{0} \\
+         & 14 & = 7  & \times 2 + & \boxed{0} \\
+         & 7  & = 3  & \times 2 + & \boxed{1} \\
+         & 3  & = 1  & \times 2 + & \boxed{1} \\
+         & 1  & = 0  & \times 2 + & \boxed{1} \\
+\text{Fractional Part:} \\
+         & 0.8125 & \times 2 & = & \boxed{1} & + 0.625 \\
+         & 0.625  & \times 2 & = & \boxed{1} & + 0.25 \\
+         & 0.25   & \times 2 & = & \boxed{0} & + 0.5 \\
+         & 0.5    & \times 2 & = & \boxed{1} & + 0.0 \\
+\end{align*}
+$$
+
+$$
+57.8125_{10} = 111001.1101_2
+$$
+
+$$
+\text{(Note that the digits of the integer part are inverted)}
+$$
+
+<br>
+
 ```typescript
 
 // Return type = string as the result will be the binary number (potential leading zeros)
@@ -68,4 +98,10 @@ const invertString = (input: string): string => {
 
     return invertedString;
 }
+
+// Run an example:
+console.log(convertDecToBin(57.8125))
+
 ```
+
+You can try this code at https://www.typescriptlang.org/play/
